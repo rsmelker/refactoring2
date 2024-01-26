@@ -4,9 +4,6 @@ public class addUser {
 
 	static void addUserInfo() {
 		
-		boolean taken = true;
-		String input = "";
-		
 		String firstName = getFirstName();
 		String lastName = getLastName();
 		String username = getUsername();

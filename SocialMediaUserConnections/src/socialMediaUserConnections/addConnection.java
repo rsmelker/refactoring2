@@ -4,8 +4,6 @@ public class addConnection {
 
 	static void connectUsers() {
 		
-		String input = "";
-		
 		String username1 = getUser1();
 		String connectionType = getConnectionType();
 		String username2 = getUser2();
