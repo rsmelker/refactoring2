@@ -2,7 +2,7 @@ package socialMediaUserConnections;
 
 public class addUser {
 
-	static void addPrompt() {
+	static void addUserInfo() {
 		
 		boolean taken = true;
 		String input = "";
@@ -29,7 +29,7 @@ public class addUser {
 		}
 		else{Driver.main(null);};
 		
-		while(Driver.checkUsername(username)) {
+		while(checkUsername(username)) {
 			System.out.println("Username not available. Enter a username, or enter \"Exit\" to return");
 			input = Driver.scnr.nextLine().trim();
 			username = null;
@@ -56,8 +56,22 @@ public class addUser {
 			else{Driver.main(null);};
 		}
 		
-		Driver.addUser(firstName, lastName, username, Integer.parseInt(age));
+		addUser.createUser(firstName, lastName, username, Integer.parseInt(age));
 		System.out.println("User Added");
+	}
+
+	static void createUser(String firstName, String lastName, String username, Integer age) {
+		Driver.users.add(new User(firstName, lastName, username, age));
+	}
+
+	static boolean checkUsername(String username) {
+		
+		for(User user : Driver.users) {
+			if(username.equalsIgnoreCase(user.username)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
