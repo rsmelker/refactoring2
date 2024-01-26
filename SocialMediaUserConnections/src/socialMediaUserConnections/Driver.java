@@ -26,4 +26,14 @@ public class Driver {
 		
 		main(args);
 	}
+
+	static boolean checkUsername(String username) {
+		
+		for(User user : users) {
+			if(username.equalsIgnoreCase(user.username)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
